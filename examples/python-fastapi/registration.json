@@ -1,0 +1,41 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "My Python Agent",
+  "description": "An ERC-8004 agent built with Python/FastAPI. Supports A2A, MCP, and OASF protocols.",
+  "image": "https://YOUR-DOMAIN/public/agent.png",
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://YOUR-DOMAIN/"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://YOUR-DOMAIN/.well-known/agent-card.json",
+      "version": "0.3.0"
+    },
+    {
+      "name": "MCP",
+      "endpoint": "https://YOUR-DOMAIN/mcp",
+      "version": "2025-11-25"
+    },
+    {
+      "name": "OASF",
+      "endpoint": "https://YOUR-DOMAIN/oasf",
+      "version": "0.8"
+    }
+  ],
+  "x402Support": false,
+  "active": true,
+  "registrations": [
+    {
+      "agentId": 0,
+      "agentRegistry": "eip155:84532:0x8004A818BFB912233c491871b3d84c89A494BD9e"
+    }
+  ],
+  "supportedTrust": ["reputation"],
+  "capabilities": [
+    "natural_language_processing/information_retrieval_synthesis/search",
+    "tool_interaction/api_schema_understanding"
+  ],
+  "pricePerMessage": "Free"
+}

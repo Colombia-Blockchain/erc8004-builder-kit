@@ -1,0 +1,9 @@
+{
+  "_comment": "MULTI-CHAIN: Replace YOUR_CHAIN_ID with your chain ID (e.g. 8453=Base, 1=Ethereum, 43114=Avalanche). Add multiple entries to register on several chains. Same contract address on all 16 supported mainnets.",
+  "registrations": [
+    {
+      "agentId": 0,
+      "agentRegistry": "eip155:YOUR_CHAIN_ID:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
+    }
+  ]
+}
