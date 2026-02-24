@@ -11,6 +11,8 @@ Built by the [Colombia-Blockchain / Enigma](https://github.com/Colombia-Blockcha
 - **Apex Arbitrage Agent** #1687 — Python/FastAPI, DeFi arbitrage detection
 - **AvaRiskScan Agent** #1686 — TypeScript/Hono, Avalanche ecosystem guide + DeFi analytics
 
+> **Compatible with any ERC-8004 scanner.** This kit includes optimization guides for [8004scan.io](https://8004scan.io) (by AltLayer). To register and verify agents in the Enigma ecosystem, visit [erc-8004scan.xyz](https://erc-8004scan.xyz). Both scanners read from the same on-chain registries — your agent works on both.
+
 ---
 
 ## Quick Start
