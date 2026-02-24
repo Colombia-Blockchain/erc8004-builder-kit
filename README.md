@@ -86,13 +86,14 @@ CHAIN=base-sepolia ./scripts/verify-agent.sh YOUR_AGENT_ID
 | 10 | [Multi-Chain](docs/guides/10-multi-chain.md) | Register on 9+ chains |
 | 11 | [Validation Registry](docs/guides/11-validation-registry.md) | zkML, TEE, stake-secured |
 | 12 | [Agent Wallet](docs/guides/12-agent-wallet.md) | setAgentWallet with EIP-712 |
+| 13 | [8004scan Optimization](docs/guides/13-8004scan-optimization.md) | Maximize your score on 8004scan.io |
 
 ### Case Studies (`docs/case-studies/`)
 
 | Study | Description |
 |-------|-------------|
 | [Apex Arbitrage](docs/case-studies/apex-arbitrage.md) | Python/FastAPI agent — ML-powered DeFi arbitrage detection |
-| [AvaRiskScan](docs/case-studies/avariskscan.md) | TypeScript/Hono agent — 27 MCP tools, x402 payments |
+| [AvaRiskScan](docs/case-studies/avariskscan.md) | TypeScript/Hono agent — 21 MCP tools, x402 payments |
 | [Dual-Agent Interaction](docs/case-studies/dual-agent-interaction.md) | Cross-agent communication with on-chain feedback |
 
 ### Starter Templates (`examples/`)
@@ -187,17 +188,43 @@ Agent → register(agentURI) → Gets NFT (agentId) → Discoverable on 8004scan
 
 ---
 
-## On-Chain Evidence
+## Real Production Results
 
-This kit isn't theoretical. Both agents are live and verified:
+This kit isn't theoretical. Both agents are live, verified, and transacting on mainnet.
 
-| Agent | ID | Chain | Scanner |
-|-------|-----|-------|---------|
-| AvaRiskScan | #1686 | Avalanche Mainnet | [View on 8004scan.io](https://8004scan.io) |
-| Apex Arbitrage | #1687 | Avalanche Mainnet | [View on 8004scan.io](https://8004scan.io) |
-| AvaRiskScan (test) | #15 | Avalanche Fuji | Testnet |
+### Agents
 
-See [on-chain-evidence/](on-chain-evidence/) for decoded transaction hashes.
+| Agent | ID | Stack | URL | Repo |
+|-------|-----|-------|-----|------|
+| Apex Arbitrage | #1687 | Python/FastAPI | [Production](https://apex-arbitrage-agent-production.up.railway.app) | [Colombia-Blockchain/apex-arbitrage-agent](https://github.com/Colombia-Blockchain/apex-arbitrage-agent) |
+| AvaRiskScan | #1686 | TypeScript/Hono | [Production](https://avariskscan-defi-production.up.railway.app) | [Colombia-Blockchain/avariskscan-defi](https://github.com/Colombia-Blockchain/avariskscan-defi) |
+
+### TRACER Scores (via [Super Sentinel](https://github.com/Enigma-Team-org/Enigma))
+
+| Dimension | Apex #1687 | AvaRiskScan #1686 |
+|-----------|-----------|-------------------|
+| Trust | 80 | 80 |
+| Reliability | 80 | 90 |
+| Autonomy | 90 | 90 |
+| Capability | 0 | 0 |
+| Economics | 90 | 90 |
+| Reputation | 0 | 0 |
+| **Total** | **55** | **57** |
+
+### On-Chain Transactions (Avalanche C-Chain)
+
+| Transaction | TxHash | Amount |
+|-------------|--------|--------|
+| x402 scan AvaRiskScan | [`0xbd479178...`](https://snowtrace.io/tx/0xbd4791789f59c87656517cf8f291db50fe5955a1cb9d8287e71c5968215b504b) | $0.01 USDC |
+| x402 scan Apex | [`0x4df46550...`](https://snowtrace.io/tx/0x4df465505b3c0e42f45f3433a9a0dd921246e8f10ee546a90687ccdc46ea87a4) | $0.01 USDC |
+| x402 self-scan | [`0x12038c59...`](https://snowtrace.io/tx/0x12038c5965c2b70ae90e3ab70306b9f8598637b29e96aae09706b96875303e48) | $0.01 USDC |
+| Feedback → AvaRiskScan | [`0xed60cbdd...`](https://snowtrace.io/tx/0xed60cbdd3fdb642af4f3c4baab958e285c9745b8368c57cc5ec8781c7cd6186b) | score: 88 |
+
+See [on-chain-evidence/](on-chain-evidence/) for decoded transaction details.
+
+### 8004scan Optimization
+
+New guide: **[13-8004scan-optimization.md](docs/guides/13-8004scan-optimization.md)** — covers all 5 scoring dimensions, every WA0XX/IA0XX warning code, and a metadata validation script. Built from real experience fixing warnings on our production agents.
 
 ---
 
